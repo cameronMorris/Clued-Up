@@ -50,10 +50,16 @@ def characterSelection():
     return playerAvatar
 
 def makeFinalAccusation(killer, murderLocation, murderWeapon):
+    #finalKillerGuessLoop = 1, this is probably the solution
+    #while finalKillerGuessLoop == 1:
     print("")
     print("=============================")
     print("Final Accusation")
     print("=============================")
+    print("")
+    print(killer)
+    print(murderLocation)
+    print(murderWeapon)
     print("")
     print("I think it was...")
     print("")
@@ -137,6 +143,10 @@ def makeFinalAccusation(killer, murderLocation, murderWeapon):
     print("Final Accusation")
     print("=============================")
     print("")
+    print(killer)
+    print(murderLocation)
+    print(murderWeapon)
+    print("")
     print("I think it was " + finalKillerGuess)
     print("In the " + finalLocationGuess)
     print("")
@@ -182,34 +192,46 @@ def makeFinalAccusation(killer, murderLocation, murderWeapon):
     print("I think it was " + finalKillerGuess)
     print("In the " + finalLocationGuess)
     print("With the " + finalWeaponGuess)
-    print("")
+    rightKiller = False
+    rightLocation = False
+    rightWeapon = False
     time.sleep(3)
     if finalKillerGuess == killer:
         print("")
         print(finalKillerGuess + " is the Killer")
+        rightKiller = True
     else:
         print("")
         print(finalKillerGuess + " is not the Killer")
     if finalLocationGuess == murderLocation:
         print("")
         print("The " + finalLocationGuess + " is the Murder Location")
+        rightLocation = True
     else:
         print("")
         print("The " + finalLocationGuess + " is not the Murder Location")
     if finalWeaponGuess == murderWeapon:
         print("")
         print("The " + finalWeaponGuess + " is the Murder Weapon")
+        rightWeapon = True
     else:
         print("")
         print("The " + finalWeaponGuess + " is not the Murder Weapon")
-    print("")
-    print("There isn't a game to win yet")
-    time.sleep(1)
-    print("")
-    goBack = input("Press enter to return to the main menu: ")
-    time.sleep(1)
-    gameLoop = 1 
-
+    if rightKiller and rightLocation and rightWeapon == True:
+        print("")
+        print("Congratulations! You solved the murder and won the game!")
+        print("")
+        goBack = input("Press enter to return to the main menu: ")
+        time.sleep(1)
+    else:
+        print("")
+        print("You have given an incorrect solution, and lost the game")
+        print("")
+        goBack = input("Press enter to return to the main menu: ")
+        time.sleep(1)
+        
+        
+        
 def playerCardSelection(playerAvatar, killer, murderLocation, murderWeapon):
     allCards = ["Cameron Morris", "Sam Forrester", "Archie Waldron", "Matthew Fearnley", "Amber Languille",
                 "Nathan Hopper", "Lobby", "Dining Room", "Living Room", "Master Bedroom", "Kitchen", "Library",
@@ -231,8 +253,8 @@ def playerCardSelection(playerAvatar, killer, murderLocation, murderWeapon):
     print("=============================")
     print("")
     print("Your dealt cards are: \n")
-    for playerCard in playerCards:
-        print(playerCard)
+    for playerCards in playerCards:
+        print(playerCards)
     numberOfCards = 7
     time.sleep(3)
     return playerCards
@@ -451,11 +473,12 @@ def solutionCardSelection():
 def viewPlayerCards(playerCards):
     print("")
     print("Your dealt cards are: \n")
-    for i in range(0,len(playerCards)):
-        print(playerCards[i])
+    for item in playerCards:
+        print (str(playerCards))
+    time.sleep(1)
     print("")
     goBack = input("Press enter to return to the turn menu: ")
-
+    
 def viewSuspectList():
     print("")
     print("Insert cleverly-written code here")
@@ -535,7 +558,7 @@ def actualGame():
                     os.system("cls")
                     turnLoop = 0
                     makeFinalAccusation(killer, murderLocation, murderWeapon)
-                    turnLoop = 1
+                    gameLoop = 1
                     continue  
                 if playerAction == "C":
                     os.system("cls")
@@ -550,11 +573,14 @@ def actualGame():
                     turnLoop = 1
                     continue
 
-# 1. Fix the makeFinalaccusation function so that it actually works
-# 2. Fix the viewSuspectlist function so that it actually works
-# 3. Move the actualGame function to the top of the screen so that my OCD doesn't kill me
-# 4. Might want to write the rules at some point, could be helpful
-# 5. Go to the Winchester, have a nice cold pint, and wait for all this to blow over
+# 1. Add to makeFinalAccusation so that incorrect values will loop the choice
+# 2. Fix viewPlayerCards so that it will properly display the cards
+# 3. Add to playerGuess so that it can actually update the suspect list
+# 4. Add to viewSuspectList so that it can be updated
+# 5. Write the rules
+# 6. Start coding the multiplayer aspect
+# 7. Produce a write-up that will actually be graded and not this
+# 8. Go to the Winchester, have a nice cold pint, and wait for all this to blow over
 
         if mainMenu == "2":
             gameLoop = 0
