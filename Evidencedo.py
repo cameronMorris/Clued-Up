@@ -27,29 +27,29 @@ def characterSelection():
             continue
         if characterSelection == "1":
             characterLoop = 0
-            playerCharacter = ("Cameron Morris")
+            playerAvatar = ("Cameron Morris")
         if characterSelection == "2":
             characterLoop = 0
-            playerCharacter = ("Sam Forrester")
+            playerAvatar = ("Sam Forrester")
         if characterSelection == "3":
             characterLoop = 0
-            playerCharacter = ("Archie Waldron")
+            playerAvatar = ("Archie Waldron")
         if characterSelection == "4":
             characterLoop = 0
-            playerCharacter = ("Matthew Fearnley")
+            playerAvatar = ("Matthew Fearnley")
         if characterSelection == "5":
             characterLoop = 0
-            playerCharacter = ("Amber Languille")
+            playerAvatar = ("Amber Languille")
         if characterSelection == "6":
             characterLoop = 0
-            playerCharacter = ("Nathan Hopper")
+            playerAvatar = ("Nathan Hopper")
         continue       
     print("")
-    print("You are " + playerCharacter)
+    print("You are " + playerAvatar)
     time.sleep(1.5)
-    return playerCharacter
+    return playerAvatar
 
-def makeFinalaccusation():
+def makeFinalAccusation(killer, murderLocation, murderWeapon):
     print("")
     print("=============================")
     print("Final Accusation")
@@ -70,18 +70,18 @@ def makeFinalaccusation():
         print("This is not a valid option")
         time.sleep(1)
         os.system("cls")
-    if finalKiler == "1":
-        finalKillerguess = ("Cameron Morris")
+    if finalKiller == "1":
+        finalKillerGuess = ("Cameron Morris")
     if finalKiller == "2":
-        finalKillerguess = ("Sam Forrester")
+        finalKillerGuess = ("Sam Forrester")
     if finalKiller == "3":
-        finalKillerguess = ("Archie Waldron")
+        finalKillerGuess = ("Archie Waldron")
     if finalKiller == "4":
-        finalKillerguess = ("Matthew Fearnley")
+        finalKillerGuess = ("Matthew Fearnley")
     if finalKiller == "5":
-        finalKillerguess = ("Amber Languille")
+        finalKillerGuess = ("Amber Languille")
     if finalKiller == "6":
-        finalKillerguess = ("Nathan Hopper")
+        finalKillerGuess = ("Nathan Hopper")
     os.system("cls")
     print("")
     print("=============================")
@@ -92,7 +92,7 @@ def makeFinalaccusation():
     print(murderLocation)
     print(murderWeapon)
     print("")
-    print("I think it was " + finalKillerguess)
+    print("I think it was " + finalKillerGuess)
     print("In the...")
     print("1. Lobby")
     print("2. Dining Room")
@@ -112,33 +112,33 @@ def makeFinalaccusation():
         time.sleep(1)
         os.system("cls")
     if finalLocation == "1":
-        finalLocationguess = ("Lobby")
+        finalLocationGuess = ("Lobby")
     if finalLocation == "2":
-        finalLocationguess = ("Dining Room")
+        finalLocationGuess = ("Dining Room")
     if finalLocation == "3":
-        finalLocationguess = ("Living Room")
+        finalLocationGuess = ("Living Room")
     if finalLocation == "4":
-        finalLocationguess = ("Master Bedroom")
+        finalLocationGuess = ("Master Bedroom")
     if finalLocation == "5":
-        finalLocationguess = ("Kitchen")
+        finalLocationGuess = ("Kitchen")
     if finalLocation == "6":
-        finalLocationguess = ("Library")
+        finalLocationGuess = ("Library")
     if finalLocation == "7":
-        finalLocationguess = ("Attic")
+        finalLocationGuess = ("Attic")
     if finalLocation == "8":
-        finalLocationguess = ("Basement")
+        finalLocationGuess = ("Basement")
     if finalLocation == "9":
-        finalLocationguess = ("Home Theatre")
+        finalLocationGuess = ("Home Theatre")
     if finalLocation == "10":
-        finalLocationguess = ("Bathroom")
+        finalLocationGuess = ("Bathroom")
     os.system("cls")
     print("")
     print("=============================")
     print("Final Accusation")
     print("=============================")
     print("")
-    print("I think it was " + finalKillerguess)
-    print("In the " + finalLocationguess)
+    print("I think it was " + finalKillerGuess)
+    print("In the " + finalLocationGuess)
     print("")
     print("With the...")
     print("")
@@ -158,83 +158,59 @@ def makeFinalaccusation():
         time.sleep(1)
         os.system("cls")
     if finalWeapon == "1":
-        finalWeaponguess = ("Revolver")
+        finalWeaponGuess = ("Revolver")
     if finalWeapon == "2":
-        finalWeaponguess = ("Knife")
+        finalWeaponGuess = ("Knife")
     if finalWeapon == "3":
-        finalWeaponguess = ("Rope")
+        finalWeaponGuess = ("Rope")
     if finalWeapon == "4":
-        finalWeaponguess = ("Poison")
+        finalWeaponGuess = ("Poison")
     if finalWeapon == "5":
-        finalWeaponguess = ("Baseball Bat")
+        finalWeaponGuess = ("Baseball Bat")
     if finalWeapon == "6":
-        finalWeaponguess = ("Statue")
+        finalWeaponGuess = ("Statue")
     if finalWeapon == "7":
-        finalWeaponguess = ("Hammer")
+        finalWeaponGuess = ("Hammer")
     if finalWeapon == "8":
-        finalWeaponguess = ("Cheese Grater")
+        finalWeaponGuess = ("Cheese Grater")
     os.system("cls")
     print("")
     print("=============================")
     print("Final Accusation")
     print("=============================")
     print("")
-    print("I think it was " + finalKillerguess)
-    print("In the " + finalLocationguess)
-    print("With the " + finalWeaponguess)
+    print("I think it was " + finalKillerGuess)
+    print("In the " + finalLocationGuess)
+    print("With the " + finalWeaponGuess)
     print("")
     time.sleep(3)
-    rightKiller == True
-    rightLocation == True
-    rightWeapon == True
-    if finalKillerguess == killer:
+    if finalKillerGuess == killer:
         print("")
-        print(finalKillerguess + " is the Killer")
+        print(finalKillerGuess + " is the Killer")
     else:
         print("")
-        print(finalKillerguess + " is not the Killer")
-        rightKiller == False
-    if finalLocationguess == murderLocation:
+        print(finalKillerGuess + " is not the Killer")
+    if finalLocationGuess == murderLocation:
         print("")
-        print("The " + finalLocationguess + " is the Murder Location")
+        print("The " + finalLocationGuess + " is the Murder Location")
     else:
         print("")
-        print("The " + finalLocationguess + " is not the Murder Location")
-        rightLocation == False
-    if finalWeaponguess == murderWeapon:
+        print("The " + finalLocationGuess + " is not the Murder Location")
+    if finalWeaponGuess == murderWeapon:
         print("")
-        print("The " + finalWeaponguess + " is the Murder Weapon")
+        print("The " + finalWeaponGuess + " is the Murder Weapon")
     else:
         print("")
-        print("The " + finalWeaponguess + " is not the Murder Weapon")
-        rightWeapon == False
-    if rightKiller and rightLocation and rightWeapon == True:
-        os.system("cls")
-        print("")
-        print("=============================")
-        print("Final Accusation")
-        print("=============================")
-        print("")
-        print("Congratulations!")
-        print("You have figured out the correct solution and won the game!")
-        time.sleep(1)
-        goBack = input("Press enter to return to the main menu: ")
-        time.sleep(1)
-        gameLoop = 1
-        return
-    else:
-        print("")
-        print("=============================")
-        print("Final Accusation")
-        print("=============================")
-        print("")
-        print("You have given an incorrect solution and lost the game")
-        time.sleep(1)
-        goBack = input("Press enter to return to the main menu: ")
-        gameLoop = 1
-        return
+        print("The " + finalWeaponGuess + " is not the Murder Weapon")
+    print("")
+    print("There isn't a game to win yet")
+    time.sleep(1)
+    print("")
+    goBack = input("Press enter to return to the main menu: ")
+    time.sleep(1)
+    gameLoop = 1 
 
-def playerCardselection(killer, murderLocation, murderWeapon):
+def playerCardSelection(playerAvatar, killer, murderLocation, murderWeapon):
     allCards = ["Cameron Morris", "Sam Forrester", "Archie Waldron", "Matthew Fearnley", "Amber Languille",
                 "Nathan Hopper", "Lobby", "Dining Room", "Living Room", "Master Bedroom", "Kitchen", "Library",
                 "Attic", "Basement", "Home Theatre", "Bathroom", "Revolver", "Knife", "Rope", "Poison",
@@ -247,124 +223,135 @@ def playerCardselection(killer, murderLocation, murderWeapon):
         cardChoice = (random.choice(allCards))
         playerCards.append(cardChoice)
         allCards.remove(cardChoice)
+    print("=============================")
+    if playerAvatar == str("Cameron Morris"):
+        print(playerAvatar + "' Cards")
+    else:
+        print(playerAvatar + "'s Cards")
+    print("=============================")
     print("")
     print("Your dealt cards are: \n")
     for playerCard in playerCards:
         print(playerCard)
-    numberOfcards = 7
+    numberOfCards = 7
     time.sleep(3)
-    return
+    return playerCards
 
-def playerGuess():
-    locationGuess = (currentLocation)
-    print("")
-    print("=============================")
-    print(currentLocation)
-    print("=============================")
-    print("")
-    print("I think it was...")
-    print("")
-    print("1. Cameron Morris")
-    print("2. Sam Forrester")
-    print("3. Archie Waldron")
-    print("4. Matthew Fearnley")
-    print("5. Amber Languille")
-    print("6. Nathan Hopper")
-    print("")
-    killerChoice = input("Enter your option here: ")
-    if not killerChoice in ["1","2","3","4","5","6"]:
+def playerGuess(currentLocation, killer, murderLocation, murderWeapon):
+    if currentLocation == ("Outside The House"):
+            print("")
+            print("You must enter the house before you can take a guess")
+            time.sleep(2)
+            os.system("cls")
+    else:
+        locationGuess = (currentLocation)
         print("")
-        print("This is not a valid option")
-        time.sleep(1)
+        print("=============================")
+        print(currentLocation)
+        print("=============================")
+        print("")
+        print("I think it was...")
+        print("")
+        print("1. Cameron Morris")
+        print("2. Sam Forrester")
+        print("3. Archie Waldron")
+        print("4. Matthew Fearnley")
+        print("5. Amber Languille")
+        print("6. Nathan Hopper")
+        print("")
+        killerChoice = input("Enter your option here: ")
+        if not killerChoice in ["1","2","3","4","5","6"]:
+            print("")
+            print("This is not a valid option")
+            time.sleep(1)
+            os.system("cls")
+        if killerChoice == "1":
+            killerGuess = ("Cameron Morris")
+        if killerChoice == "2":
+            killerGuess = ("Sam Forrester")
+        if killerChoice == "3":
+            killerGuess = ("Archie Waldron")
+        if killerChoice == "4":
+            killerGuess = ("Matthew Fearnley")
+        if killerChoice == "5":
+            killerGuess = ("Amber Languille")
+        if killerChoice == "6":
+            killerGuess = ("Nathan Hopper")
         os.system("cls")
-    if killerChoice == "1":
-        killerGuess = ("Cameron Morris")
-    if killerChoice == "2":
-        killerGuess = ("Sam Forrester")
-    if killerChoice == "3":
-        killerGuess = ("Archie Waldron")
-    if killerChoice == "4":
-        killerGuess = ("Matthew Fearnley")
-    if killerChoice == "5":
-        killerGuess = ("Amber Languille")
-    if killerChoice == "6":
-        killerGuess = ("Nathan Hopper")
-    os.system("cls")
-    print("")
-    print("=============================")
-    print(currentLocation)
-    print("=============================")
-    print("")
-    print("I think it was " + killerGuess)
-    print("In the " + locationGuess)
-    print("")
-    print("With the...")
-    print("")
-    print("1. Revolver")
-    print("2. Knife")
-    print("3. Rope")
-    print("4. Poision")
-    print("5. Baseball Bat")
-    print("6. Statue")
-    print("7. Hammer")
-    print("8. Cheese Grater")
-    print("")
-    weaponChoice = input("Enter your option here: ")
-    if not weaponChoice in ["1","2","3","4","5","6","7","8"]:
         print("")
-        print("This is not a valid option")
-        time.sleep(1)
+        print("=============================")
+        print(currentLocation)
+        print("=============================")
+        print("")
+        print("I think it was " + killerGuess)
+        print("In the " + locationGuess)
+        print("")
+        print("With the...")
+        print("")
+        print("1. Revolver")
+        print("2. Knife")
+        print("3. Rope")
+        print("4. Poision")
+        print("5. Baseball Bat")
+        print("6. Statue")
+        print("7. Hammer")
+        print("8. Cheese Grater")
+        print("")
+        weaponChoice = input("Enter your option here: ")
+        if not weaponChoice in ["1","2","3","4","5","6","7","8"]:
+            print("")
+            print("This is not a valid option")
+            time.sleep(1)
+            os.system("cls")
+        if weaponChoice == "1":
+            weaponGuess = ("Revolver")
+        if weaponChoice == "2":
+            weaponGuess = ("Knife")
+        if weaponChoice == "3":
+            weaponGuess = ("Rope")
+        if weaponChoice == "4":
+            weaponGuess = ("Poison")
+        if weaponChoice == "5":
+            weaponGuess = ("Baseball Bat")
+        if weaponChoice == "6":
+            weaponGuess = ("Statue")
+        if weaponChoice == "7":
+            weaponGuess = ("Hammer")
+        if weaponChoice == "8":
+            weaponGuess = ("Cheese Grater")
         os.system("cls")
-    if weaponChoice == "1":
-        weaponGuess = ("Revolver")
-    if weaponChoice == "2":
-        weaponGuess = ("Knife")
-    if weaponChoice == "3":
-        weaponGuess = ("Rope")
-    if weaponChoice == "4":
-        weaponGuess = ("Poison")
-    if weaponChoice == "5":
-        weaponGuess = ("Baseball Bat")
-    if weaponChoice == "6":
-        weaponGuess = ("Statue")
-    if weaponChoice == "7":
-        weaponGuess = ("Hammer")
-    if weaponChoice == "8":
-        weaponGuess = ("Cheese Grater")
-    os.system("cls")
-    print("")
-    print("=============================")
-    print(currentLocation)
-    print("=============================")
-    print("")
-    print("I think it was " + killerGuess)
-    print("In the " + locationGuess)
-    print("With the " + weaponGuess)
-    if killerGuess == killer:
         print("")
-        print(killerGuess + " is the Killer")
-    else:
+        print("=============================")
+        print(currentLocation)
+        print("=============================")
         print("")
-        print(killerGuess + " is not the Killer")
-        clearedKiller = killerGuess
-    if locationGuess == murderLocation:
+        print("I think it was " + killerGuess)
+        print("In the " + locationGuess)
+        print("With the " + weaponGuess)
+        if killerGuess == killer:
+            print("")
+            print(killerGuess + " is the Killer")
+        else:
+            print("")
+            print(killerGuess + " is not the Killer")
+        if locationGuess == murderLocation:
+            print("")
+            print("The " + locationGuess + " is the Murder Location")
+        else:
+            print("")
+            print("The " + locationGuess + " is not the Murder Location") 
+        if weaponGuess == murderWeapon:
+            print("")
+            print("The " + weaponGuess + " is the Murder Weapon")
+        else:
+            print("")
+            print("The " + weaponGuess + " is not the Murder Weapon")
+        # This needs to properly update the suspect list
         print("")
-        print("The " + locationGuess + " is the Murder Location")
-    else:
-        print("")
-        print("The " + locationGuess + " is not the Murder Location")
-        clearedLocation = locationGuess 
-    if weaponGuess == murderWeapon:
-        print("")
-        print("The " + weaponGuess + " is the Murder Weapon")
-    else:
-        print("")
-        print("The " + weaponGuess + " is not the Murder Weapon")
-        clearedWeapon = weaponGuess
-    # This needs to properly update the suspect list
-    goBack = input("Press enter to return to the turn menu: ")
+        goBack = input("Press enter to return to the turn menu: ")
+        #Eventually needs to return the player guesses
 
-def roomTraversal():
+def roomTraversal(currentLocation):
     roomLoop = 1
     while roomLoop == 1:
         print("")
@@ -427,16 +414,15 @@ def roomTraversal():
     print("")
     time.sleep(1.5)
     goBack = input("Press enter to return to the turn menu: ")
-    return
+    return currentLocation
 
 def rules():
     print("")
     print("If you were really good at computing, you could bend the rules to your will")
     print("")
     goBack = input("Press enter to return to the turn menu: ")
-    return
 
-def solutionCardselection():
+def solutionCardSelection():
     possibleKillers = ["Cameron Morris", "Sam Forrester", "Archie Waldron",
                        "Matthew Fearnley", "Amber Languille", "Nathan Hopper"]
     killer = random.choice(possibleKillers)
@@ -462,33 +448,20 @@ def solutionCardselection():
     time.sleep(1.5)
     return killer, murderLocation, murderWeapon
 
-def viewPlayercards(playerCards, numberOfcards):
+def viewPlayerCards(playerCards):
     print("")
     print("Your dealt cards are: \n")
     for i in range(0,len(playerCards)):
         print(playerCards[i])
     print("")
     goBack = input("Press enter to return to the turn menu: ")
-    return
 
-def viewSuspectlist(killerSuspectlist, locationSuspectlist, weaponSuspectlist):
-    #not quite sure what's wrong here, but just fix it
+def viewSuspectList():
     print("")
-    print("Possible Killers:")
-    for killerSuspectlist in killerSuspectlist:
-        print(killerSuspectlist)
-    print("")
-    print("Possible Locations:")
-    for locationSuspectlist in locationSuspectlist:
-        print(locationSuspectlist)
-    print("")
-    print("Possible Weapons:")
-    for weaponSuspectlist in weaponSuspectlist:
-        print(weaponSuspectlist)
+    print("Insert cleverly-written code here")
     print("")
     goBack = input("Press enter to return to the turn menu: ")
-    return
-    
+      
 def actualGame():
     gameLoop = 1
     while gameLoop == 1:
@@ -511,12 +484,12 @@ def actualGame():
         if mainMenu == "1":
             os.system("cls")
             gameLoop = 0
-            k, ml, mw = solutionCardselection()
+            killer, murderLocation, murderWeapon = solutionCardSelection()
             os.system("cls")
-            characterSelection()
+            playerAvatar = characterSelection()
             os.system("cls")
-            pc = playerCardselection(k, ml, mw)
-            pc = str(pc)
+            playerCards = playerCardSelection(playerAvatar, killer, murderLocation, murderWeapon)
+            playerCards = str(playerCards)
             os.system("cls")
             currentLocation = ("Outside The House")
             turnLoop = 1
@@ -524,10 +497,10 @@ def actualGame():
                 os.system("cls")
                 print("")
                 print("=============================")
-                if pc == str("Cameron Morris"):
-                    print(pc + "' Turn")
+                if playerAvatar == str("Cameron Morris"):
+                    print(playerAvatar + "' Turn")
                 else:
-                    print(pc + "'s Turn")
+                    print(playerAvatar + "'s Turn")
                 print("=============================")
                 print("")
                 print("Current Location: " + currentLocation)
@@ -549,37 +522,31 @@ def actualGame():
                 if playerAction == "1":
                     os.system("cls")
                     turnLoop = 0
-                    roomTraversal()
+                    currentLocation = roomTraversal(currentLocation)
                     turnLoop = 1
                     continue
                 if playerAction == "2":
-                    if currentLocation == ("Outside The House"):
-                        print("")
-                        print("You must enter the house before you can take a guess")
-                        time.sleep(2)
-                        os.system("cls")
-                        continue
                     os.system("cls")
                     turnLoop = 0
-                    playerGuess()
+                    playerGuess(currentLocation, killer, murderLocation, murderWeapon)
                     turnLoop = 1
                     continue
                 if playerAction == "3":
                     os.system("cls")
                     turnLoop = 0
-                    makeFinalaccusation()
+                    makeFinalAccusation(killer, murderLocation, murderWeapon)
                     turnLoop = 1
                     continue  
                 if playerAction == "C":
                     os.system("cls")
                     turnLoop = 0
-                    viewPlayercards(playerCards, numberOfcards)
+                    viewPlayerCards(playerCards)
                     turnLoop = 1
                     continue
                 if playerAction == "S":
                     os.system("cls")
                     turnLoop = 0
-                    viewSuspectlist(killerSuspectlist, locationSuspectlist, weaponSuspectlist)
+                    viewSuspectList()
                     turnLoop = 1
                     continue
 
