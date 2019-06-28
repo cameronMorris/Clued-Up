@@ -49,6 +49,18 @@ def characterSelection():
     time.sleep(1.5)
     return playerAvatar
 
+def mainMenu():
+    print("")
+    print("\t\t\t******************************************")
+    print("\t\t\t*\t\tEvidencedo\t\t *")
+    print("\t\t\t******************************************")
+    print("\t\t\t* 1.Single-Player Game\t\t\t *")
+    print("\t\t\t* 2.Multi-Player Game\t\t\t *")
+    print("\t\t\t* 3.Game Rules\t\t\t         *")
+    print("\t\t\t* 4.Exit the Program\t\t\t *")
+    print("\t\t\t******************************************")
+    print("")
+
 def makeFinalAccusation(killer, murderLocation, murderWeapon):
     #finalKillerGuessLoop = 1, this is probably the solution
     #while finalKillerGuessLoop == 1:
@@ -470,6 +482,26 @@ def solutionCardSelection():
     time.sleep(1.5)
     return killer, murderLocation, murderWeapon
 
+def turnMenu(playerAvatar, currentLocation):
+    os.system("cls")
+    print("")
+    print("=============================")
+    if playerAvatar == str("Cameron Morris"):
+        print(playerAvatar + "' Turn")
+    else:
+        print(playerAvatar + "'s Turn")
+    print("=============================")
+    print("")
+    print("Current Location: " + currentLocation)
+    print("")
+    print("1. Move to another Room")
+    print("2. Take a Guess")
+    print("3. Make a Final Accusation")
+    print("")
+    print("Press C to view your dealt cards")
+    print("Press S to view your full suspect list")
+    print("")
+
 def viewPlayerCards(playerCards):
     print("")
     print("Your dealt cards are: \n")
@@ -488,23 +520,14 @@ def viewSuspectList():
 def actualGame():
     gameLoop = 1
     while gameLoop == 1:
-        print("")
-        print("\t\t\t******************************************")
-        print("\t\t\t*\t\tEvidencedo\t\t *")
-        print("\t\t\t******************************************")
-        print("\t\t\t* 1.Single-Player Game\t\t\t *")
-        print("\t\t\t* 2.Multi-Player Game\t\t\t *")
-        print("\t\t\t* 3.Game Rules\t\t\t         *")
-        print("\t\t\t* 4.Exit the Program\t\t\t *")
-        print("\t\t\t******************************************")
-        print("")
-        mainMenu = input("Enter your option here: ")
-        if not mainMenu in ["1","2","3","4"]:
+        mainMenu()
+        mainMenuChoice = input("Enter your option here: ")
+        if not mainMenuChoice in ["1","2","3","4"]:
             print("")
             print("This is not a valid option")
             time.sleep(1)
             os.system("cls")
-        if mainMenu == "1":
+        if mainMenuChoice == "1":
             os.system("cls")
             gameLoop = 0
             killer, murderLocation, murderWeapon = solutionCardSelection()
@@ -517,24 +540,7 @@ def actualGame():
             currentLocation = ("Outside The House")
             turnLoop = 1
             while turnLoop == 1:
-                os.system("cls")
-                print("")
-                print("=============================")
-                if playerAvatar == str("Cameron Morris"):
-                    print(playerAvatar + "' Turn")
-                else:
-                    print(playerAvatar + "'s Turn")
-                print("=============================")
-                print("")
-                print("Current Location: " + currentLocation)
-                print("")
-                print("1. Move to another Room")
-                print("2. Take a Guess")
-                print("3. Make a Final Accusation")
-                print("")
-                print("Press C to view your dealt cards")
-                print("Press S to view your full suspect list")
-                print("")
+                turnMenu(playerAvatar, currentLocation)
                 playerAction = input("Enter your option here: ").upper()
                 if not playerAction in ["1","2","3","C","S"]:
                     print("")
@@ -582,7 +588,7 @@ def actualGame():
 # 7. Produce a write-up that will actually be graded and not this
 # 8. Go to the Winchester, have a nice cold pint, and wait for all this to blow over
 
-        if mainMenu == "2":
+        if mainMenuChoice == "2":
             gameLoop = 0
             os.system("cls")
             print("")
@@ -593,14 +599,14 @@ def actualGame():
             print("Like you have friends")
             time.sleep(2)
             
-        if mainMenu == "3":
+        if mainMenuChoice == "3":
             gameLoop = 0
             os.system("cls")
             rules()
             gameLoop = 1
             os.system("cls")
             
-        if mainMenu == "4":
+        if mainMenuChoice == "4":
             gameLoop = 0
             os.system("cls")
             print("")
