@@ -402,22 +402,25 @@ def playerGuess(currentLocation, killer, murderLocation, murderWeapon, suspectKi
         else:
             print("")
             print(killerGuess + " is not the Killer")
-            suspectKillers.append
-            suspectKillers.remove(killerGuess)
+            if killerGuess in suspectKillers:
+                suspectKillers.append
+                suspectKillers.remove(killerGuess)
         if locationGuess == murderLocation:
             print("")
         else:
             print("")
             print("The " + locationGuess + " is not the Murder Location")
-            suspectLocations.append
-            suspectLocations.remove(locationGuess)
+            if locationGuess in suspectLocations:
+                suspectLocations.append               
+                suspectLocations.remove(locationGuess)
         if weaponGuess == murderWeapon:
             print("")
         else:
             print("")
             print("The " + weaponGuess + " is not the Murder Weapon")
-            suspectWeapons.append
-            suspectWeapons.remove(weaponGuess)
+            if weaponGuess in suspectWeapons:
+                suspectWeapons.append
+                suspectWeapons.remove(weaponGuess)
         print("")
         time.sleep(1)
         print("Suspect List has been updated")
@@ -677,6 +680,6 @@ def actualGame():
             gameLoop = 0
             os.system("cls")
             print("")
-            killCode = input("Press enter to quit the program: ")
+            killCode = input("Press Enter to exit the program: ")
 
 actualGame()
