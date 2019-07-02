@@ -43,7 +43,8 @@ def characterSelection():
         if characterSelection == "6":
             characterLoop = 0
             playerAvatar = ("Nathan Hopper")
-        continue       
+        continue
+    playerAvatar = str(playerAvatar)
     print("")
     print("You are " + playerAvatar)
     time.sleep(1.5)
@@ -54,8 +55,8 @@ def mainMenu():
     print("\t\t\t******************************************")
     print("\t\t\t*\t\tEvidencedo\t\t *")
     print("\t\t\t******************************************")
-    print("\t\t\t* 1.Single-Player Game\t\t\t *")
-    print("\t\t\t* 2.Multi-Player Game\t\t\t *")
+    print("\t\t\t* 1.Single Player Game\t\t\t *")
+    print("\t\t\t* 2.Multiplayer Game\t\t\t *")
     print("\t\t\t* 3.Game Rules\t\t\t         *")
     print("\t\t\t* 4.Exit the Program\t\t\t *")
     print("\t\t\t******************************************")
@@ -281,10 +282,9 @@ def playerCardSelection(playerAvatar, killer, murderLocation, murderWeapon):
         print(playerAvatar + "'s Cards")
     print("=============================")
     print("")
-    print("Your dealt cards are: \n")
-    for playerCards in playerCards:
-        print(playerCards)
-    numberOfCards = 7
+    print("Your dealt cards are:")
+    print("")
+    print(*playerCards, sep = "\n")
     time.sleep(3)
     return playerCards
 
@@ -521,7 +521,7 @@ def solutionCardSelection():
     murderWeapon = random.choice(possibleWeapons)
     print("")
     print("=============================")
-    print("Single-Player Game")
+    print("Single Player Game")
     print("=============================")
     print("")
     print("The Killer has been selected")
@@ -564,23 +564,35 @@ def turnMenu(playerAvatar, currentLocation):
     print("Press S to view your full suspect list")
     print("")
 
-def viewPlayerCards(playerCards):
+def viewPlayerCards(playerCards, playerAvatar):
     print("")
-    print("Your dealt cards are: \n")
-    print (playerCards)
+    print("=============================")
+    if playerAvatar == ("Cameron Morris"):
+        print(str(playerAvatar) + "' Cards")
+    else:
+        print(str(playerAvatar) + "'s Cards")
+    print("=============================")
+    print("")
+    print("Your dealt cards are:")
+    print("")
+    print(*playerCards, sep = "\n")
     print("")
     goBack = input("Press Enter to return to the Turn Menu: ")
     
 def viewSuspectList(suspectKillers, suspectLocations, suspectWeapons):
     print("")
+    print("=============================")
+    print("Suspect List")
+    print("=============================")
+    print("")
     print("Suspected Killers:")
-    print(suspectKillers)
+    print(*suspectKillers, sep = "\n")
     print("")
     print("Suspected Locations:")
-    print(suspectLocations)
+    print(*suspectLocations, sep = "\n")
     print("")
     print("Suspected Weapons:")
-    print(suspectWeapons)
+    print(*suspectWeapons, sep = "\n")
     print("")
     goBack = input("Press Enter to return to the Turn Menu: ")
       
@@ -602,7 +614,6 @@ def actualGame():
             playerAvatar = characterSelection()
             os.system("cls")
             playerCards = playerCardSelection(playerAvatar, killer, murderLocation, murderWeapon)
-            playerCards = str(playerCards)
             os.system("cls")
             suspectKillers, suspectLocations, suspectWeapons = suspectCardsPrep(killer, murderLocation, murderWeapon)
             currentLocation = ("Outside The House")
@@ -637,7 +648,7 @@ def actualGame():
                 if turnMenuChoice == "C":
                     os.system("cls")
                     turnLoop = 0
-                    viewPlayerCards(playerCards)
+                    viewPlayerCards(playerCards, playerAvatar)
                     turnLoop = 1
                     continue
                 if turnMenuChoice == "S":
@@ -652,10 +663,10 @@ def actualGame():
             os.system("cls")
             print("")
             print("=============================")
-            print("Multi-Player Game")
+            print("Multiplayer Game")
             print("=============================")
             print("")
-            print("The Multi-Player aspect of Evidencedo is currently under development")
+            print("The multiplayer aspect of Evidencedo is currently under development")
             print("Updates will be coming soon")
             time.sleep(2)
             print("")
