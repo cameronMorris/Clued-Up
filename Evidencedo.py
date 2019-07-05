@@ -495,16 +495,39 @@ def roomTraversal(currentLocation):
 
 def rules():
     print("")
-    print("'It was a dark and stormy night' etc")
-    print("Somebody has been murdered")
+    print("=============================")
+    print("Story")
+    print("=============================")
+    print("")
+    print("It is a dark and stormy night, and a party is being held in the grand Méfiant Manor, when suddenly, a most horrific incident occured.")
+    print("The wealthy entrepreneur, Mr. Charles Orpse, has been found dead whilst the other guests were partying elsewhere in the manor.")
+    print("The task of searching for the killer has now fallen on to you")
     print("Can you solve the crime?")
     time.sleep(3)
     print("")
     goOn = input("Press Enter to continue: ")
     os.system("cls")
     print("")
-    print("Exposition")
+    print("=============================")
+    print("General Rules")
+    print("=============================")
+    print("")
+    print("To solve the murder, you must move between the different rooms of the manor in order to make guesses.")
+    print("On your turn, you will be allowed to guess the identity of the killer, the location where the murder took place, and the murder weapon.")
+    print("In order to include a specific room in to your guess, you must be in that room")
+    print("You will be provided with a suspect list in order to aid in your investigation, which will automatically update once guesses are made")
+    print("Once you think you have solved the case, you must make a Final Accusation to confirm your suspicions")
     time.sleep(3)
+    print("")
+    goOn = input("Press Enter to continue: ")
+    os.system("cls")
+    print("")
+    print("=============================")
+    print("Helpful Tips")
+    print("=============================")
+    print("")
+    print("When making choices, type in the corresponding number or letter, followed by Enter")
+    print("Once you have begun a Final Accusation, you cannot return  to the main game, so make sure you have the correct information")
     print("")
     goBack = input("Press Enter to return to the Main Menu: ")
 
@@ -674,11 +697,10 @@ def actualGame():
             gameLoop = 1
             os.system("cls")
 
-# 1. Fix viewPlayerCards and viewSuspectList so that it will display contents properly
-# 2. Start coding the multiplayer aspect
-# 3. Write the rules
-# 4. Produce a write-up that will actually be graded and not this
-# 5. Go to the Winchester, have a nice cold pint, and wait for all this to blow over
+# 1. Start coding the multiplayer aspect
+# 2. Write the rules
+# 3. Produce a write-up that will actually be graded and not this
+# 4. Go to the Winchester, have a nice cold pint, and wait for all this to blow over
             
         if mainMenuChoice == "3":
             gameLoop = 0
